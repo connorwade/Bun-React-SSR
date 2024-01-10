@@ -12,4 +12,9 @@ export const api = {
     cache.set(path, body);
     return body;
   },
+  getPage: async (path: string) => {
+    const res = await fetch(base + path);
+    const body = await res.text();
+    return body;
+  }
 };

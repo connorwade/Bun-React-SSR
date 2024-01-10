@@ -5,12 +5,11 @@ function Page() {
   return (
     <html>
       <head>
-        <title>Pure SSR</title>
+        <title>Route 1</title>
         <script type="module" src="/dist/index.js"></script>
       </head>
       <body>
-        <h1>Pure SSR</h1>
-        <div id="counter"></div>
+        <h1>Route 1</h1>
       </body>
     </html>
   );

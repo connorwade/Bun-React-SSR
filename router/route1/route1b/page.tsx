@@ -1,16 +1,14 @@
 import { hydrateRoot } from "react-dom/client";
-import Counter from "../../components/Counter";
 
 function Page() {
   return (
     <html>
       <head>
-        <title>Pure SSR</title>
+        <title>Route 1b</title>
         <script type="module" src="/dist/index.js"></script>
       </head>
       <body>
-        <h1>Pure SSR</h1>
-        <div id="counter"></div>
+        <h1>Route 1b</h1>
       </body>
     </html>
   );
