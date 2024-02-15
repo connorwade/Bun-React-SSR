@@ -1,3 +1,4 @@
+"use client";
 import { Suspense, useEffect, useState } from "react";
 import { api } from "../client/src/api";
 import Loading from "./Loading";
@@ -6,7 +7,7 @@ function ServerIsland() {
   const [serverComponent, setServerComponent] = useState(null);
 
   useEffect(() => {
-    api.get("/componenttest").then((data) => {
+    api.get("/helloworld").then((data) => {
       setServerComponent(data);
     });
   }, [serverComponent]);

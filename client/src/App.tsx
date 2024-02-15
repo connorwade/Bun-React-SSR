@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <Counter />
       <ServerIsland />
-      <a href="/pure-ssr">Pure SSR</a>
+      {/* <a href="/pure-ssr">Pure SSR</a> */}
     </div>
   );
 }

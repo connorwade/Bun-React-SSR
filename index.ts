@@ -53,7 +53,7 @@ readRouterDir(
 Bun.serve({
   port: 6543,
   async fetch(req) {
-    console.log(router);
+    // console.log(router);
     const url = new URL(req.url);
 
     if (url.pathname.includes("/dist")) {
@@ -62,6 +62,19 @@ Bun.serve({
       );
       return new Response(file, {
         headers: { "Content-Type": "text/javascript" },
+      });
+    }
+
+    if (url.pathname.includes("/helloworld")) {
+      const component = await import(
+        path.join(import.meta.dir, "/components/HelloWorld.tsx")
+      );
+      console.log("COMPONENT", component.default);
+      const stream = await renderToReadableStream(
+        component.default({ message: "Hello world" })
+      );
+      return new Response(stream, {
+        headers: { "Content-Type": "text/html" },
       });
     }
 
